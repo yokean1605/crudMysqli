@@ -1,6 +1,6 @@
 <?php
 require "koneksi.php";
-$ide   = $_GET["rubah_id"];
+$ide   = $_GET["id"];
 $sql   = "SELECT * FROM mahasiswa WHERE id = '$ide'";
 $query = mysqli_query($koneksi, $sql) or die(mysqli_error($koneksi));
 if (mysqli_num_rows($query) > 0) {
@@ -18,10 +18,10 @@ if (mysqli_num_rows($query) > 0) {
 </head>
 
 <body>
-    <div class="container">
-        <h3 class="font-weight-bold mb-4">Ubah</h3>
-        <form action="update.php" method="post">
-            <input type="text" name="id" type="hidden" id="" value="<?=$data["$id"]?>">
+    <div class="container mt-4">
+        <h3 class="font-weight-bold mb-4">Ubah Data</h3>
+        <form action="action/update.php" method="post">
+            <input type="text" name="id" hidden value="<?=$data["id"]?>">
             <div class="form-group">
                 <label for="name">Nama</label>
                 <input type="text" name="nama" id="name" class="form-control" value="<?=$data["nama_mhs"]?>">
@@ -30,7 +30,7 @@ if (mysqli_num_rows($query) > 0) {
                 <label for="Email">Email</label>
                 <input type="email" name="email" id="email" class="form-control" value="<?=$data["email_mhs"]?>">
             </div>
-            <button type="submit" class="btn btn-success" value="Rubah">Simpan</button>
+            <button type="submit" class="btn btn-success">Simpan</button>
         </form>
     </div>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
