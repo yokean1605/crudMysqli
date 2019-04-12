@@ -10,7 +10,7 @@
     $tgl = date("Y:m:d");
 
     // query sql
-    $sql = "INSERT INTO mahasiswa (nama_mhs, email_mhs, tanggal) VALUES ('$nm','$em','$tgl')";
+    $sql = "INSERT INTO mahasiswa (nama_mahasiswa, email_mahasiswa, tanggal) VALUES ('$nm','$em','$tgl')";
     $query = mysqli_query($koneksi, $sql) or die(mysqli_error($koneksi));
 
     if (!$query) {
